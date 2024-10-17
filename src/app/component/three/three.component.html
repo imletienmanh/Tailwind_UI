@@ -1,0 +1,77 @@
+<div class="min-w-[50rem] rounded-lg bg-white p-16 shadow">
+  <h2 class="font-meri text-3xl font-black">Users</h2>
+
+  <div>
+    <div class="mt-6 flex flex-col gap-4 md:flex-row">
+      <div class="relative grow rounded-md gap-2">
+        <input
+          type="text"
+          class="mr-2 w-full pl-10 px-4 py-2 border-2"
+          placeholder="Search users"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="{1.5}"
+          stroke="currentColor"
+          class="size-5 absolute left-3 top-2.5 text-gray-400"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+          />
+        </svg>
+      </div>
+
+      <div class="space-x-2 inline">
+        <a
+          class="border-2 p-2 mb-2 inline-block cursor-pointer rounded-lg bg-white hover:bg-blue-400 hover:text-white"
+          >Reputation</a
+        >
+        <a
+          class="border-2 p-2 mb-2 inline-block cursor-pointer rounded-lg bg-white hover:bg-blue-400 hover:text-white"
+          >New users</a
+        >
+        <a
+          class="border-2 p-2 mb-2 inline-block cursor-pointer rounded-lg bg-white hover:bg-blue-400 hover:text-white"
+          >Voters</a
+        >
+        <a
+          class="border-2 p-2 mb-2 inline-block cursor-pointer rounded-lg bg-white hover:bg-blue-400 hover:text-white"
+          >Editors</a
+        >
+        <a
+          class="border-2 p-2 mb-2 inline-block cursor-pointer rounded-lg bg-white hover:bg-blue-400 hover:text-white"
+          >Moderatos</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div
+      *ngFor="let user of users"
+      class="flex bg-[#FBFCFF] hover:shadow-lg hover:border-[1px] hover:border-[#BFC8E5] cursor-pointer p-6 gap-x-4"
+    >
+      <img
+        [src]="'https://picsum.photos/200/300?random={user.name}'"
+        class="h-24 w-24 rounded-full"
+        alt=""
+      />
+      <div>
+        <h3 class="font-meri font-black">{{ user.name }}</h3>
+        <p class="font-popin text-sm">{{ user.job }}</p>
+        <div class="mt-4 space-x-2">
+          <span
+            *ngFor="let tag of user.tags"
+            class="inline-block rounded-full border-[1px] text-xs border-slate-400 text-[#516FD4] p-2"
+          >
+            {{ tag }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
