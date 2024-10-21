@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common'
   templateUrl: './three.component.html',
   styleUrl: './three.component.scss'
 })
-export class UserlistComponent{
+export class ThreeComponent{
   users: users[] = [
     { name: 'John Doe', job: 'Software Engineer', avatar: '', tags: ['Angular', 'TypeScript'] },
     { name: 'Jane Smith', job: 'Product Manager', avatar: '', tags: ['React', 'JavaScript'] },
